@@ -153,20 +153,20 @@
   <section class="tshirts" id="tshirts">
     <div class="tshirt">
       <img src="img/Y2222.jpg" alt="T-shirt Blanc">
-      <p>T-shirt Blanc Unisexe</p>
-      <p><strong>1500 DA</strong></p>
+      <p>T-shirt Unisexe</p>
+      <p><strong>2000 DA</strong></p>
       <a class="btn" href="#commande">Commander</a>
     </div>
     <div class="tshirt">
       <img src="img/YOUKA DESIGN (1).jpg" alt="T-shirt Noir">
-      <p>T-shirt Noir Slim</p>
-      <p><strong>1800 DA</strong></p>
+      <p>T-shirt Oversize</p>
+      <p><strong>2500 DA</strong></p>
       <a class="btn" href="#commande">Commander</a>
     </div>
     <div class="tshirt">
       <img src="img/YOUKA DESIGN.jpg" alt="Oversize">
-      <p>T-shirt Oversize Bleu</p>
-      <p><strong>2000 DA</strong></p>
+      <p>T-shirt Oversize</p>
+      <p><strong>2500 DA</strong></p>
       <a class="btn" href="#commande">Commander</a>
     </div>
   </section>
@@ -179,12 +179,12 @@
       <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
       <input type="text" name="adresse" placeholder="Adresse de livraison" required>
 
-      <select name="modele" required>
+      <select name="modele" id="modele" required>
         <option value="">Choisir un modèle</option>
-        <option value="Blanc Unisexe">Blanc Unisexe</option>
-        <option value="Noir Slim">Noir Slim</option>
-        <option value="Oversize Bleu">Oversize Bleu</option>
-      </select>
+        <option value="Unisex">Unisexe</option>
+        <option value="Basic">Basic</option>
+        <option value="Oversize">Oversize</option>
+    </select>
 
       <select name="taille" required>
         <option value="">Choisir la taille</option>
@@ -194,13 +194,10 @@
         <option value="XL">XL</option>
       </select>
 
-      <select name="couleur" required>
+      <select name="couleur" id="couleur" required>
         <option value="">Choisir la couleur</option>
-        <option value="Blanc">Blanc</option>
-        <option value="Noir">Noir</option>
-        <option value="Bleu">Bleu</option>
-        <option value="Rouge">Rouge</option>
-      </select>
+        <!-- Les options seront changées dynamiquement par JS -->
+    </select>
 
       <label>Ajoutez votre design (PNG, JPG, PDF) :</label>
       <input type="file" name="design" accept=".png,.jpg,.jpeg,.pdf">
@@ -215,5 +212,33 @@
     &copy; 2025 Youka Design. Tous droits réservés.
   </footer>
 
+
+  <script>
+    // Fonction qui met à jour les options de couleur en fonction du modèle sélectionné
+    document.getElementById('modele').addEventListener('change', function() {
+        var couleurSelect = document.getElementById('couleur');
+        var modele = this.value;
+
+        // Effacer les options existantes de couleur
+        couleurSelect.innerHTML = '<option value="">Choisir la couleur</option>';
+
+        // Ajouter les nouvelles options en fonction du modèle
+        if (modele === 'Unisex' || modele === 'Basic') {
+            var couleurs = ['Blanc', 'Noir', 'Bleu', 'Rouge'];
+        } else if (modele === 'Oversize') {
+            var couleurs = ['Noir', 'Blanc', 'Beige'];
+        } else {
+            var couleurs = [];
+        }
+
+        // Ajouter les options de couleur dynamiquement
+        couleurs.forEach(function(couleur) {
+            var option = document.createElement('option');
+            option.value = couleur;
+            option.textContent = couleur;
+            couleurSelect.appendChild(option);
+        });
+    });
+</script>
 </body>
 </html>
