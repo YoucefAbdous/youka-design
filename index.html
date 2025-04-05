@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youka Design - T-shirts personnalisés</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff5722;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem;
+      background-color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #000;
+    }
+
+    .tshirts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .tshirt {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .tshirt:hover {
+      transform: translateY(-5px);
+    }
+
+    .tshirt img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .tshirt p {
+      margin: 0.5rem 0;
+    }
+
+    .btn {
+      background-color: #ff5722;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e64a19;
+    }
+
+    .form-section {
+      padding: 2rem;
+      background-color: #fff;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, select, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="img/YK-removebg-preview.png" alt="Youka Design Logo">
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#tshirts">T-shirts</a></li>
+        <li><a href="#commande">Commander</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Crée ton T-shirt unique avec Youka Design</h1>
+    <p>Choisis ton modèle, ta taille, ta couleur et ajoute ton propre design</p>
+  </section>
+
+  <section class="tshirts" id="tshirts">
+    <div class="tshirt">
+      <img src="img/Y2222.jpg" alt="T-shirt Blanc">
+      <p>T-shirt Blanc Unisexe</p>
+      <p><strong>1500 DA</strong></p>
+      <a class="btn" href="#commande">Commander</a>
+    </div>
+    <div class="tshirt">
+      <img src="img/YOUKA DESIGN (1).jpg" alt="T-shirt Noir">
+      <p>T-shirt Noir Slim</p>
+      <p><strong>1800 DA</strong></p>
+      <a class="btn" href="#commande">Commander</a>
+    </div>
+    <div class="tshirt">
+      <img src="img/YOUKA DESIGN.jpg" alt="Oversize">
+      <p>T-shirt Oversize Bleu</p>
+      <p><strong>2000 DA</strong></p>
+      <a class="btn" href="#commande">Commander</a>
+    </div>
+  </section>
+
+  <section class="form-section" id="commande">
+    <h2>Commander votre T-shirt</h2>
+    <form action="https://formsubmit.co/youyou.abds01@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="prenom" placeholder="Prénom" required>
+      <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+      <input type="text" name="adresse" placeholder="Adresse de livraison" required>
+
+      <select name="modele" required>
+        <option value="">Choisir un modèle</option>
+        <option value="Blanc Unisexe">Blanc Unisexe</option>
+        <option value="Noir Slim">Noir Slim</option>
+        <option value="Oversize Bleu">Oversize Bleu</option>
+      </select>
+
+      <select name="taille" required>
+        <option value="">Choisir la taille</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+
+      <select name="couleur" required>
+        <option value="">Choisir la couleur</option>
+        <option value="Blanc">Blanc</option>
+        <option value="Noir">Noir</option>
+        <option value="Bleu">Bleu</option>
+        <option value="Rouge">Rouge</option>
+      </select>
+
+      <label>Ajoutez votre design (PNG, JPG, PDF) :</label>
+      <input type="file" name="design" accept=".png,.jpg,.jpeg,.pdf" required>
+
+      <textarea name="notes" placeholder="Commentaires supplémentaires (facultatif)"></textarea>
+
+      <button type="submit" class="btn">Envoyer la commande</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Youka Design. Tous droits réservés.
+  </footer>
+
+</body>
+</html>
