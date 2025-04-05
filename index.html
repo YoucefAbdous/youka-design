@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Youka Design - T-shirts personnalisés</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -125,11 +126,33 @@
     }
 
     footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #000;
-      color: #fff;
-    }
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ff9900; /* Couleur hover */
+}
+
   </style>
 </head>
 
@@ -209,8 +232,20 @@
   </section>
 
   <footer>
-    &copy; 2025 Youka Design. Tous droits réservés.
-  </footer>
+    <p>&copy; 2025 Youka Design. Tous droits réservés.</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/your-instagram" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@your-tiktok" target="_blank" class="social-icon">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com/your-facebook" target="_blank" class="social-icon">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </div>
+</footer>
+
 
 
   <script>
