@@ -8,176 +8,36 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header img {
-      height: 50px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ff5722;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3rem 2rem;
-      background-color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #000;
-    }
-
-    .tshirts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .tshirt {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .tshirt:hover {
-      transform: translateY(-5px);
-    }
-
-    .tshirt img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .tshirt p {
-      margin: 0.5rem 0;
-    }
-
-    .btn {
-      background-color: #ff5722;
-      border: none;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: #e64a19;
-    }
-
-    .form-section {
-      padding: 2rem;
-      background-color: #fff;
-      max-width: 600px;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input, select, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #000;
-      color: #fff;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .social-icons {
-      margin-top: 10px;
-    }
-
-    .social-icon {
-      margin: 0 15px;
-      color: #fff;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .social-icon:hover {
-      color: #ff9900;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f9f9f9; color: #333; }
+    header { background-color: #000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    header img { height: 50px; }
+    nav ul { display: flex; list-style: none; gap: 1.5rem; }
+    nav a { color: white; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+    nav a:hover { color: #ff5722; }
+    .hero { text-align: center; padding: 3rem 2rem; background-color: #fff; }
+    .hero h1 { font-size: 2.5rem; color: #000; }
+    .tshirts { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem; }
+    .tshirt { background-color: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); text-align: center; transition: transform 0.3s ease; }
+    .tshirt:hover { transform: translateY(-5px); }
+    .tshirt img { max-width: 100%; border-radius: 8px; }
+    .tshirt p { margin: 0.5rem 0; }
+    .btn { background-color: #ff5722; border: none; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease; cursor: pointer; }
+    .btn:hover { background-color: #e64a19; }
+    .form-section { padding: 2rem; background-color: #fff; max-width: 600px; margin: auto; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: none; }
+    form { display: flex; flex-direction: column; gap: 1rem; }
+    input, select, textarea { padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; }
+    footer { text-align: center; padding: 1rem; background-color: #000; color: #fff; }
+    footer p { margin: 0; font-size: 1rem; }
+    .social-icons { margin-top: 10px; }
+    .social-icon { margin: 0 15px; color: #fff; font-size: 1.5rem; text-decoration: none; transition: color 0.3s; }
+    .social-icon:hover { color: #ff9900; }
 
     /* Sélecteur de couleurs */
-    .color-options {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px 0;
-    }
-
-    .color-circle {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .color-circle:hover {
-      transform: scale(1.2);
-    }
-
-    .selected {
-      border: 2px solid #000;
-    }
+    .color-options { display: flex; justify-content: center; gap: 10px; margin: 10px 0; }
+    .color-circle { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; cursor: pointer; transition: transform 0.2s; }
+    .color-circle:hover { transform: scale(1.2); }
+    .selected { border: 2px solid #000; }
   </style>
 </head>
 
@@ -208,7 +68,7 @@
         <div class="color-circle" data-color="Noir" style="background-color: black;"></div>
         <div class="color-circle" data-color="Beige" style="background-color: beige;"></div>
       </div>
-      <a class="btn" href="#commande">Commander</a>
+      <a class="btn commander-btn" href="#commande">Commander</a>
     </div>
 
     <div class="tshirt" data-model="Unisex">
@@ -221,7 +81,7 @@
         <div class="color-circle" data-color="Bleu" style="background-color: blue;"></div>
         <div class="color-circle" data-color="Rouge" style="background-color: red;"></div>
       </div>
-      <a class="btn" href="#commande">Commander</a>
+      <a class="btn commander-btn" href="#commande">Commander</a>
     </div>
 
     <div class="tshirt" data-model="Oversize">
@@ -233,7 +93,7 @@
         <div class="color-circle" data-color="Blanc" style="background-color: white;"></div>
         <div class="color-circle" data-color="Beige" style="background-color: beige;"></div>
       </div>
-      <a class="btn" href="#commande">Commander</a>
+      <a class="btn commander-btn" href="#commande">Commander</a>
     </div>
 
     <div class="tshirt" data-model="Oversize">
@@ -245,7 +105,7 @@
         <div class="color-circle" data-color="Blanc" style="background-color: white;"></div>
         <div class="color-circle" data-color="Beige" style="background-color: beige;"></div>
       </div>
-      <a class="btn" href="#commande">Commander</a>
+      <a class="btn commander-btn" href="#commande">Commander</a>
     </div>
   </section>
 
@@ -274,10 +134,6 @@
 
       <select name="couleur" id="couleur" required>
         <option value="">Choisir la couleur</option>
-        <option value="Noir">Noir</option>
-        <option value="Blanc">Blanc</option>
-        <option value="Beige">Beige</option>
-        <option value="Rouge">Rouge</option>
       </select>
 
       <label>Ajoutez votre design (PNG, JPG, PDF) :</label>
@@ -292,52 +148,68 @@
   <footer>
     <p>&copy; 2025 Youka Design. Tous droits réservés.</p>
     <div class="social-icons">
-        <a href="https://www.instagram.com/_youka_design_/" target="_blank" class="social-icon">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.tiktok.com/@youkadesign?_t=ZM-8vHt8qbfDfD&_r=1" target="_blank" class="social-icon">
-            <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://www.facebook.com/p/YouKa-Design-100084364081555/" target="_blank" class="social-icon">
-            <i class="fab fa-facebook"></i>
-        </a>
+      <a href="https://www.instagram.com/_youka_design_/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@youkadesign?_t=ZM-8vHt8qbfDfD&_r=1" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/p/YouKa-Design-100084364081555/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
     </div>
   </footer>
 
   <script>
-    // Mettre à jour les options de couleur en fonction du modèle choisi
-    document.getElementById('modele').addEventListener('change', function() {
-      var couleurSelect = document.getElementById('couleur');
-      var modele = this.value;
-
-      couleurSelect.innerHTML = '<option value="">Choisir la couleur</option>';
-
-      if (modele === 'Unisex' || modele === 'Basic') {
-          var couleurs = ['Blanc', 'Noir', 'Bleu', 'Rouge'];
-      } else if (modele === 'Oversize') {
-          var couleurs = ['Noir', 'Blanc', 'Beige'];
-      } else {
-          var couleurs = [];
-      }
-
-      couleurs.forEach(function(couleur) {
-          var option = document.createElement('option');
-          option.value = couleur;
-          option.textContent = couleur;
-          couleurSelect.appendChild(option);
-      });
-    });
-
     // Interaction couleurs sur les cartes produits
     document.querySelectorAll('.color-circle').forEach(circle => {
       circle.addEventListener('click', function() {
         this.parentElement.querySelectorAll('.color-circle').forEach(c => c.classList.remove('selected'));
         this.classList.add('selected');
+      });
+    });
 
-        // On peut aussi changer l'image du t-shirt selon la couleur choisie (si dispo)
-        let tshirtDiv = this.closest('.tshirt');
-        let color = this.getAttribute('data-color');
-        console.log("Couleur choisie pour ce modèle:", color);
+    // Cliquer sur Commander ouvre le formulaire et pré-remplit modèle + couleur
+    document.querySelectorAll('.commander-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const tshirt = this.closest('.tshirt');
+        const modele = tshirt.getAttribute('data-model');
+        const couleurSelected = tshirt.querySelector('.color-circle.selected');
+        const couleur = couleurSelected ? couleurSelected.getAttribute('data-color') : '';
+
+        // Afficher le formulaire
+        const formSection = document.getElementById('commande');
+        formSection.style.display = 'block';
+        formSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Mettre à jour le formulaire
+        document.getElementById('modele').value = modele;
+
+        // Mettre à jour les couleurs disponibles
+        const couleurSelect = document.getElementById('couleur');
+        couleurSelect.innerHTML = '<option value="">Choisir la couleur</option>';
+        let couleurs = [];
+        if(modele === 'Unisex' || modele === 'Basic') couleurs = ['Blanc','Noir','Bleu','Rouge'];
+        else if(modele === 'Oversize') couleurs = ['Noir','Blanc','Beige'];
+        couleurs.forEach(c => {
+          const option = document.createElement('option');
+          option.value = c;
+          option.textContent = c;
+          couleurSelect.appendChild(option);
+        });
+
+        if(couleur) couleurSelect.value = couleur;
+      });
+    });
+
+    // Changer les options de couleur si modèle changé manuellement dans le formulaire
+    document.getElementById('modele').addEventListener('change', function() {
+      const couleurSelect = document.getElementById('couleur');
+      couleurSelect.innerHTML = '<option value="">Choisir la couleur</option>';
+      let couleurs = [];
+      const modele = this.value;
+      if(modele === 'Unisex' || modele === 'Basic') couleurs = ['Blanc','Noir','Bleu','Rouge'];
+      else if(modele === 'Oversize') couleurs = ['Noir','Blanc','Beige'];
+      couleurs.forEach(c => {
+        const option = document.createElement('option');
+        option.value = c;
+        option.textContent = c;
+        couleurSelect.appendChild(option);
       });
     });
   </script>
